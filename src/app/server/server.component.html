@@ -1,1 +1,5 @@
-<p>I am a server component</p>
+
+
+<button class="btn btn-secondary" (click)="toggleStatus()">{{ getServerStatus() ? 'Off' : 'On' }}</button>
+
+<p [ngStyle]="{backgroundColor: getColor()}">SERVER ID: {{ id }}. Currently: {{ getServerStatus() ? 'online' : 'offline' }}</p>
