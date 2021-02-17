@@ -6,3 +6,16 @@
   /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
   background-size: cover;
 }
+
+.ingredient-container {
+  overflow: scroll;
+  max-height: 100px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #cccccc50;
+}
+
+ingredients-header {
+  font-weight: bold;
+  padding: 3px;
+}

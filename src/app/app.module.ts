@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from "@angular/forms";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import {MatIconModule } from "@angular/material/icon";
+import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { MatGridListModule } from "@angular/material/grid-list";
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { HeaderComponent } from './header/header.component';
+import {MatChipsModule} from '@angular/material/chips';
 import { FooterComponent } from './footer/footer.component';
 import { RecipeBrowseListComponent } from './recipe-browse/recipe-browse-list/recipe-browse-list.component';
 import { RecipeBookListComponent } from './recipe-book/recipe-book-list/recipe-book-list.component';
@@ -41,8 +43,10 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatCardModule,
     MatInputModule,
+    MatListModule,
     MatButtonModule,
     MatGridListModule,
+    MatChipsModule,
     // HttpModule,
     FormsModule,
     HttpClientModule,
