@@ -1,6 +1,7 @@
-h1 {
-  color: magenta;
+.example-spacer {
+  flex: 1 1 auto;
 }
-div {
-  background-color: dodgerblue;
+
+.app-container {
+  height: 100vh;
 }

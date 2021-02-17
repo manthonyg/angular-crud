@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+  <mat-card-header>
+
+    <mat-card-title>{{ recipe?.title }}</mat-card-title>
+    <mat-card-subtitle href="{recipe?.href}">View</mat-card-subtitle>
+  </mat-card-header>
+ 
+  <mat-card-content>
+    <p>
+      {{ recipe?.ingredients }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>ADD INGREDIENTS TO SHOPPING LIST</button>
+    <button mat-button [routerLink]="['recipe-list', recipe?.title]">VIEW</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,9 @@
+.grid-item {
+  background-color: #cccccc50;
+}
+
+.search-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

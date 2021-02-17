@@ -1,11 +1,14 @@
 
-<div class="container">
-<div class="row">
+<div class="app-container">
+  <nav aria-role="navigation">
+    <app-header></app-header>
+  </nav>
 
-<div class="col-12 text-center">
-<h1>APP</h1>
-<hr>
-<app-servers></app-servers>
-</div>
-</div>
-</div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+      <app-footer></app-footer>
+  </footer>
+</div> 

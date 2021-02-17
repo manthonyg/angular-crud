@@ -1,0 +1,14 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #bbbbbb;
+}

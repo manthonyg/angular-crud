@@ -1,0 +1,10 @@
+
+<mat-card class="search-card">
+  <app-recipe-browse-search></app-recipe-browse-search>
+
+</mat-card>
+<mat-grid-list cols="3" rowHeight="1.5:1">
+  <mat-grid-tile *ngFor="let recipe of recipes; let idx = index;" class="grid-item">
+    <app-recipe-browse-item [recipe]="recipe"></app-recipe-browse-item>
+  </mat-grid-tile>
+</mat-grid-list>

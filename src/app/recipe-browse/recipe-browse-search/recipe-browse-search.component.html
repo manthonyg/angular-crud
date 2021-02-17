@@ -1,0 +1,11 @@
+<form (submit)="searchRecipes()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Ingredients</mat-label>
+    <input (change)="logChange()" matInput placeholder="Ex. Shrimp" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchParams.i">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Food name</mat-label>
+    <input matInput placeholder="Ex. Pizza" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchParams.q">
+  </mat-form-field>
+  <button type="submit" mat-button color="accent">Search</button>
+</form>

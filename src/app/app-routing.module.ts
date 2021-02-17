@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RecipeBrowseListComponent } from "./recipe-browse/recipe-browse-list/recipe-browse-list.component";
+import { RecipeBookDetailsComponent } from "./recipe-book/recipe-book-details/recipe-book-details.component";
+import { RecipeBookListComponent } from "./recipe-book/recipe-book-list/recipe-book-list.component";
+import { ShoppingListComponent } from './shopping-cart/shopping-list/shopping-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: RecipeBrowseListComponent },
+  { path: 'recipe-list', component: RecipeBookListComponent, children: [
+    { path: ':recipeName', component: RecipeBookDetailsComponent }
+  ]},
+  { path: 'shopping-list', component: ShoppingListComponent }
+
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
