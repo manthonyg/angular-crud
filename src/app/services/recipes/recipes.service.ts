@@ -4,7 +4,7 @@ import { Recipe } from "../../recipe-browse/recipe-browse-item/recipe.model";
 import { pipe, Subject } from "rxjs";
 import { parseIngredients } from "../../shared/helpers/api.helpers";
 import { map } from "rxjs/operators";
-
+import { withCache } from '@ngneat/cashew';
 interface SearchParams {
   q: string;
   i: string;
@@ -19,8 +19,7 @@ export class RecipesService {
   public recipeBrowseList = new Subject<Recipe[]>()
 
   fetchRecipes(searchParams: SearchParams): void {
-    this.http.get<Recipe[]>(`http://www.recipepuppy.com/api/?i=${searchParams?.i}&q=${searchParams?.q}&p=3`, {
-    })
+    this.http.get<Recipe[]>(`http://www.recipepuppy.com/api/?i=${searchParams?.i}&q=${searchParams?.q}&p=3`, withCache())
     .pipe(map(recipes => {
       return recipes['results'].map(recipe => {
         return {

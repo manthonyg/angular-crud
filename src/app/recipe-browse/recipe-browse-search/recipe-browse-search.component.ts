@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { RecipesService } from "../../services/recipes/recipes.service";
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
@@ -9,7 +9,7 @@ interface SearchParams {
   i: string;
 };
 
-export interface Ingredient {
+interface Ingredient {
   name: string;
 }
 
@@ -25,31 +25,36 @@ export class RecipeBrowseSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public ingredients: Ingredient[] = [
+  @Output() public ingredients: Ingredient[] = [
     {name: 'Lemon'},
     {name: 'Lime'},
     {name: 'Apple'},
   ];
-  public searchParams: SearchParams = {q: '', i: delimitIngredients(this.ingredients)};
+  public searchParams: SearchParams = {q: '', i: this.ingredients.map(ingredient => ingredient.name).join(',')};
   public visible = true;
   public selectable = true;
   public removable = true;
   public addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
-  searchRecipes(): void {
+  searchRecipes(ingredients: Ingredient[]): void {
     console.log(this.searchParams)
-    this.recipesService.fetchRecipes(this.searchParams)
+    this.recipesService.fetchRecipes({q: this.searchParams.q, i: delimitIngredients(ingredients)})
   }
 
   logChange(): void {
     console.log(this.searchParams.q)
   }
 
+  log() {
+    console.log(this.ingredients)
+  }
+
   add(event: MatChipInputEvent): void {
+    console.log(this.ingredients)
     const input = event.input;
     const value = event.value;
-
+    console.log(value)
     // Add the ingredient
     if ((value || '').trim()) {
       this.ingredients.push({name: value.trim()});
@@ -62,6 +67,7 @@ export class RecipeBrowseSearchComponent implements OnInit {
   }
 
   remove(ingredient: Ingredient): void {
+    console.log(this.ingredients)
     const index = this.ingredients.indexOf(ingredient);
 
     if (index >= 0) {

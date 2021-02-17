@@ -22,6 +22,7 @@ import { ShoppingListComponent } from './shopping-cart/shopping-list/shopping-li
 import { ShoppingListItemComponent } from './shopping-cart/shopping-list-item/shopping-list-item.component';
 import { RecipeBrowseSearchComponent } from './recipe-browse/recipe-browse-search/recipe-browse-search.component';
 import {MatInputModule} from '@angular/material/input';
+import { HttpCacheInterceptorModule } from '@ngneat/cashew';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatGridListModule,
     MatChipsModule,
-    // HttpModule,
+    HttpCacheInterceptorModule.forRoot(),
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

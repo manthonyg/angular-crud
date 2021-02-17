@@ -16,8 +16,7 @@ export const parseIngredients = (ingredients: string): string[] => {
  * @param ingredients - an array of ingredients from the multi select input used to search for recipes
  */
 export const delimitIngredients = (ingredients: Ingredient[]): string => {
-  return ingredients
-  .map(ingredient => ingredient.name)
-  .join(',')
-  .toLowerCase();
+  const ing = ingredients.map(ingredient => ingredient.name).join(',').toLowerCase();
+  console.log(ing)
+  return ing
 }
