@@ -3,6 +3,10 @@ import { keyframes } from "@angular/animations"
 export interface Ingredient {
   name: string;
 }
+
+export interface ShoppingItem {
+  name: string;
+}
 /**
  * 
  * @param ingredients - a string result from the recipe puppy API delimited by commas

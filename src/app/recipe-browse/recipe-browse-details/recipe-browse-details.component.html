@@ -11,7 +11,6 @@
     </mat-list>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="handleAddItems(recipe.ingredients)">ADD INGREDIENTS TO SHOPPING LIST</button>
-    <button *ngIf="canView" mat-button [routerLink]="['recipe-list', recipe?.title]">VIEW</button>
+    <button mat-button (click)="handleAddRecipe(recipe)">ADD TO RECIPE LIST</button>
   </mat-card-actions>
 </mat-card>

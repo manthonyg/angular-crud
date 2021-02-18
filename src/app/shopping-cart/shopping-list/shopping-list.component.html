@@ -1,1 +1,21 @@
-<p>shopping-list works!</p>
+
+<div class="shopping-list-container">
+ 
+<mat-card class="shopping-list-card">
+<mat-form-field class="example-chip-list">
+  <mat-label>Shopping List</mat-label>
+  <mat-chip-list #chipList aria-label="Item selection">
+    <mat-chip *ngFor="let item of shoppingList" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(item)">
+      {{item.name}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="New item..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>
+</mat-card>
+  </div>

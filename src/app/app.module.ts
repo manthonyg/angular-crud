@@ -23,6 +23,7 @@ import { ShoppingListItemComponent } from './shopping-cart/shopping-list-item/sh
 import { RecipeBrowseSearchComponent } from './recipe-browse/recipe-browse-search/recipe-browse-search.component';
 import {MatInputModule} from '@angular/material/input';
 import { HttpCacheInterceptorModule } from '@ngneat/cashew';
+import { RecipeBrowseDetailsComponent } from './recipe-browse/recipe-browse-details/recipe-browse-details.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HttpCacheInterceptorModule } from '@ngneat/cashew';
     ShoppingListComponent,
     ShoppingListItemComponent,
     RecipeBrowseSearchComponent,
+    RecipeBrowseDetailsComponent,
   ],
   imports: [
     BrowserModule,

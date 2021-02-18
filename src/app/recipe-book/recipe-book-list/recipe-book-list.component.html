@@ -1,1 +1,7 @@
-<p>recipe-book-list works!</p>
+<mat-grid-list cols="3" rowHeight="1.5:1">
+  <mat-grid-tile *ngFor="let recipe of recipeBookList; let idx = index;" class="grid-item">
+    <app-recipe-browse-item [canView]="false" [recipe]="recipe"></app-recipe-browse-item>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<router-outlet></router-outlet>

@@ -4,11 +4,12 @@ import { RecipeBrowseListComponent } from "./recipe-browse/recipe-browse-list/re
 import { RecipeBookDetailsComponent } from "./recipe-book/recipe-book-details/recipe-book-details.component";
 import { RecipeBookListComponent } from "./recipe-book/recipe-book-list/recipe-book-list.component";
 import { ShoppingListComponent } from './shopping-cart/shopping-list/shopping-list.component';
+import { RecipeBrowseDetailsComponent } from "./recipe-browse/recipe-browse-details/recipe-browse-details.component";
 
 const routes: Routes = [
   { path: '', component: RecipeBrowseListComponent },
   { path: 'recipe-list', component: RecipeBookListComponent, children: [
-    { path: ':recipeName', component: RecipeBookDetailsComponent }
+    { path: ':title', component: RecipeBrowseDetailsComponent }
   ]},
   { path: 'shopping-list', component: ShoppingListComponent }
 

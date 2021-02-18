@@ -1,0 +1,8 @@
+.shopping-list-card {
+  width: 400px;
+}
+
+.shopping-list-container {
+  display: flex;
+  justify-content: center;
+}
